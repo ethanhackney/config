@@ -1,0 +1,15 @@
+#!/bin/bash
+
+# bash config
+echo 'set -o vi' >> .profile && . .profile
+
+# vim config
+git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+git clone https://github.com/mintisan/oh-my-vim.git ~/oh-my-vim
+ln -s $PWD/oh-my-vim/vimrc ~/.vimrc
+sudo apt-get install exuberant-ctags
+sudo apt-get install cscope
+vim -c ':PluginInstall' -c ':wqa'
+
+# tmux config
+sudo apt-get install tmux
